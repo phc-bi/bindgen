@@ -34,7 +34,7 @@ import org.bindgen.Bindable;
  * for more details.
  */
 @SupportedAnnotationTypes({ "org.bindgen.Bindable" })
-@SupportedSourceVersion(SourceVersion.RELEASE_6)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class Processor extends AbstractProcessor {
 
 	private GenerationQueue queue;
