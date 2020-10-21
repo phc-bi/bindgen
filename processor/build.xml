@@ -30,7 +30,13 @@
 	with this for now.
 	-->
 	<target name="jar" depends="compile" description="jar bin/main/ into bin/jars/bindgen.jar and bin/sources/bindgen.jar">
-		<taskdef name="jarjar" classname="com.tonicsystems.jarjar.JarJarTask" classpath="bin/lib/build/jars/jarjar.jar"/>
+		<taskdef name="jarjar" classname="com.tonicsystems.jarjar.JarJarTask">
+		    <classpath>
+		        <fileset dir="bin/lib/build/jars">
+		            <include name="*.jar" />
+		        </fileset>
+		    </classpath>
+		</taskdef>
 		<mkdir dir="bin/jars"/>
 		<jarjar destfile="bin/jars/bindgen.jar">
 			<fileset dir="bin/main" includes="**/*.class"/>

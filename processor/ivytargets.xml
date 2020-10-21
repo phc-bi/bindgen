@@ -1,12 +1,12 @@
 <project name="bindgen.ivytargets" xmlns:ivy="antlib:org.apache.ivy.ant">
-	<property name="ivy.jar.version" value="2.2.0"/>
+	<property name="ivy.jar.version" value="2.5.0"/>
 	<property name="ivy.jar.name" value="ivy-${ivy.jar.version}.jar"/>
 	<property name="ivy.home" value="${user.home}/.ivy2"/>
 	<available property="ivy.installed" file="${ivy.home}/${ivy.jar.name}"/>
 
 	<target name="ivy.install" unless="ivy.installed">
 		<mkdir dir="${ivy.home}"/>
-		<get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.jar.version}/${ivy.jar.name}" dest="${ivy.home}/${ivy.jar.name}"/>
+		<get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.jar.version}/${ivy.jar.name}" dest="${ivy.home}/${ivy.jar.name}"/>
 	</target>
 
 	<target name="ivy.init" depends="ivy.install">
