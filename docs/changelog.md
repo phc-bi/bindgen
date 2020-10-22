@@ -6,6 +6,10 @@ title: Changelog
 Changelog
 =========
 
+## 2.24 - 2020-10-22
+* New: You can use `regex:` as a prefix for any entry in the `scope` configuration property to have it match class names as a regular expression rather than the traditional exact string prefix matching.
+* Fix: 'Circular' generics references (e.g. `Organisation<M extends Individual<O>, O extends Organisation<M, O>>`) no longer generate bindings with invalid type arguments.
+
 ## 2.23 - 2011-04-04
 
 * Fix: Protected methods in inner classes caused compile errors (reported by Thomas Matthijs)
