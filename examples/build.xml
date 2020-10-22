@@ -25,7 +25,7 @@
 		</javac>
 		<!-- now tests -->
 		<mkdir dir="bin/tests"/>
-		<javac destdir="bin/tests" classpathref="classpath" debug="true" nowarn="yes" source="1.6" target="1.6" encoding="utf8">
+		<javac destdir="bin/tests" classpathref="classpath" debug="true" nowarn="yes" source="1.8" target="1.8" encoding="utf8">
 			<src path="src/test/java"/>
 			<classpath>
 				<pathelement location="bin/main"/>

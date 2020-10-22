@@ -8,7 +8,7 @@ Bundle-Name: Bindgen Annotation Processor Plug-in
 Bundle-ActivationPolicy: lazy
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.bindgen;singleton:=true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: bin/lib/build/jars/joist-util.jar,
  .
 
