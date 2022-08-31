@@ -6,6 +6,9 @@ title: Changelog
 Changelog
 =========
 
+## 2.25 - 2022-08-31
+* New: Bindgen declares additional annotation-processor metadata so it can participate in incremental Gradle builds. (Technical detail: if you have the 'bind keyword' feature turned on, then Bindgen tells Gradle that it is running as an 'aggregating' annotation processor; if you have that turned off, then Bindgen tells Gradle that it is running as an 'isolating' annotation processor. The latter is more efficient, so if you don't really need the 'bind keyword' functionality it's worth turning it off.)
+
 ## 2.24 - 2020-10-22
 * New: You can use `regex:` as a prefix for any entry in the `scope` configuration property to have it match class names as a regular expression rather than the traditional exact string prefix matching.
 * Fix: 'Circular' generics references (e.g. `Organisation<M extends Individual<O>, O extends Organisation<M, O>>`) no longer generate bindings with invalid type arguments.

@@ -157,7 +157,7 @@ public class BindingClassGenerator {
 
 	private void saveCode(GClass gc) {
 		try {
-			JavaFileObject jfo = getFiler().createSourceFile(gc.getFullName(), Copy.array(Element.class, Copy.list(this.sourceElements)));
+			JavaFileObject jfo = getFiler().createSourceFile(gc.getFullName(), this.element);
 			Writer w = jfo.openWriter();
 			w.write(gc.toCode());
 			w.close();

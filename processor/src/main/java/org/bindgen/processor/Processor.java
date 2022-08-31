@@ -3,6 +3,7 @@ package org.bindgen.processor;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.lang.reflect.Field;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -46,6 +47,14 @@ public class Processor extends AbstractProcessor {
 		CurrentEnv.set(this.processingEnv);
 		this.queue = new GenerationQueue();
 		this.hasUpdatedKeywordClass = false;
+	}
+	
+	@Override
+	public Set<String> getSupportedOptions() {
+		Set<String> supportedOptions = new HashSet<String>(super.getSupportedOptions());
+		supportedOptions.add("org.gradle.annotation.processing." +
+				(CurrentEnv.getConfig().skipBindKeyword() ? "isolating" : "aggregating"));
+		return supportedOptions;
 	}
 
 	@Override
